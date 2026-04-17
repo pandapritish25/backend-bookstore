@@ -42,7 +42,7 @@ app.get("/books", async (req , res) => {
         res.status(500).json({message: "Error fetching books"});
         console.log(error.message);
     }
-})
+});
 // this thing here is basically known ads a query parameter 
 app.get("/books/:id" , async (req , res) => {
     const {id} = req.params;
@@ -51,6 +51,29 @@ app.get("/books/:id" , async (req , res) => {
         res.status(200).json(book);
     } catch(error ) {
         res.status(500).json({message: "No book in this id"});
+    }
+});
+// this is basically to update a book means you would be needing to update the book inside and thus 
+// this is known as the put method in which we woudl be updating the book
+app.put("/books/:id" , async (req , res) => {
+    const {id} = req.params;
+    try {
+        const {title , author , publishYear} = req.body;
+        const updatedBook = await Book.findByIdAndUpdate(id , {title , author , publishYear});
+        res.status(201).json(updatedBook);
+    } catch(error) {
+        res.status(500).json({message: "Unable to update the data" , error});
+    }
+});
+
+// this is the function which we would be using to delete the folders.
+app.delete("/books/:id" , async (req , res) => {
+    const {id} = req.params;
+    try {
+        const deleteBook = await Book.findByIdAndDelete(id);
+        return res.status(200).json({message: "Book has been deleted successfully"});
+    } catch (error) {
+        res.status(500).json({message: "Failed to delete data" , error});
     }
 })
 connectDB(app)
