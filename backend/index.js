@@ -2,13 +2,17 @@
 // needing to import the express file
 import express from "express";
 import "dotenv/config";
-import connectDB from "./config/db.js";
 import { Book } from "./models/bookModel.js";
+import connectDB from "./config/db.js";
+import cors from "cors";
 
 // now you would be needing to create an app instance and you need to call express
 const app = express();
-
 app.use(express.json()); 
+// here always you need to remember that cors is a function not a variable
+// for this reason infinite loading was there and rendering was not able to happen , we would be needing to have cors and that to we would be needing
+// to use cors as a function
+app.use(cors());
 
 // in order for getting anything from server app.get
 app.get("/" , (req , res) => {
@@ -75,5 +79,5 @@ app.delete("/books/:id" , async (req , res) => {
     } catch (error) {
         res.status(500).json({message: "Failed to delete data" , error});
     }
-})
+});
 connectDB(app)

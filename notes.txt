@@ -1,0 +1,236 @@
+This is basically we would be learning node js
+First step is to download the node js and for that you would be needing to download node js inside your browser
+once after you have downloaded , you would be needing to do node -v for the version so node -v will 
+be giving you the output as 
+➜  node node -v
+v24.14.1
+
+and npm is nothing but a node package manager so npm is basically a node package manager
+➜  node npm -v
+11.11.0 and this would be the version for npm
+
+As this is a full stack project , you would be needing to have a backend and also a frontend thus you would 
+be needing to make a folder named as backend and thus we would be doing a npm init inside backend node which will initialise all repos and give me a folder to work upon
+
+Once you hit enter , a package file would be present means a package file would be created and that we call as package.json();
+so once you do npm init inside any of the project , you would be getting a package.json which would be the heart for your project
+
+now after installation , we would be needing to change the type from common js to module , thus what this does is this will help us in changing 
+the common js types to modules and will be helping us in having the import export statements
+Thus what happens is that when you do type to modules , you can import export the statement from any modules
+
+Thus what happens in in order to create a nodejs server you have to write a lot of steps like you would be needing to mention a lot of steps in order to have a nodejs server
+but as we know we are not using any kind of nodejs framework and to make that work easier , we have express once this has been installed , what happens is that 
+you would be needing to have a express library for the server which will have all the modules
+
+Thus what happens is that we would be needing to download express npm i express once this has been downloaded
+you would be seeing express inside the dependencies thus what happens is that once you download the express you would be seeing node_modules
+and also the express dependencies inside package.json()
+
+now you would be needing to import the express js and you would be needing to write code like 
+// first thing after having express is that you would be needing to import express thus you would be 
+// needing to import the express file
+import express from "express";
+
+// now you would be needing to create an app instance and you need to call express
+const app = express();
+
+// now you have downloaded the express server and you have imported this through app so you have imported this through the application
+// now you would be needing to listen this through a port means you have a port and you would be needing to listen this inside any port
+
+// listening the port at 8000 and if I want to print something then a callback function
+so now you can go to localhost 8000 and listen to this
+
+this code basically means that our app will create a root route which is 200 and whenever you would request anything
+// this will be giving you the response as res.status as 200 means that this would be giving the response status as 200
+
+// now you said the server that the response status is 200 but but you would be needing to send something and for that we are sending hello world
+app.get("/" , (req , res) => {
+    res.status(200).send("<h1>Hello workd</h1>")
+})
+
+// now what is happening is that everytime I would be changing the server , or I would be making any changes 
+the server wont be replying back to me means if I change anything , I need to close and start the server which is not good
+
+for this we have a package called as nodemon means this is basically a tool that will help to autorestart the server
+in case of any of the changes , the server would be restarted for me
+
+// now I would be downloading the nodemon but there is a catch whenever you would be downloading the nodemon , you will be having the things generally inside dependencies
+and if you do a npm install nodemon this will add inside dependencies but do I need in production the ans is no 
+I dont need this inside the production for that I would be needing to downloaded inside dev dependencies
+
+npm i nodemon -D as this is not needed in production
+for you , you would be entering the command npx nodemon index.js
+and thus you would be having the nodejs commands and then everytime you would be changing the server , your server would be restated
+
+
+thus everytime using this npx command is not worth itn thus what needs to be done is that you would be needing to 
+have the scripts and then inside scripts you would be able to add all the scripts and you would be 
+tagging them with dev example 
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon index.js"
+  }, and now if you type npm run dev your node server would be starting
+
+  // thus you would have created a .env file and thus you would be needing to have a dotenv extension 
+  means now you have the environment file , how you would be importing that the ans is .env files
+  and whenever I would be doing 
+  npm install dotenv --save , we would be having a dependency inside the folder 
+    "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+
+  and once you have downloaded the .env , you would be needing to import that and how can you import
+  import "dotenv/config";
+
+  once this has been imported successfully , you have a processexposed to you , you can do console.log(proces.env.PORT)
+  and in this manner you would be getting the port
+
+
+  // listening the port at 8000 and if I want to print something then a callback function
+// now we would be needing to change the function as we would be doing some string interpolation means that 
+// we would be having somekind of string interpolation so we would be changing to template literals
+app.listen(PORT , () => console.log(`Server is running on ${PORT}`));
+
+as thus env has basically sensitive information , I dont want to commit the .env file because this has sensitive information
+and also I dont want to have the nodemodules means that you dont need node modules basically to have there
+
+// now we have learnt how we would be sending request to the node modules now we would be learnign about a database now
+and that database would bee mongoDB
+
+so that database would be mongoDB , thus what happens is that suppose you have a mongoDB then what can be done is you 
+can basically use this in 2 ways one is mongoDB and the other is mongoDB atlas
+
+// so basically what happens is that suppse you are having a mongoose server means suppose you are having mongoose then what can be done is that 
+mongoose is used to  work in async environment for mongoDB
+thus I can say that we use mongoose to be used in mongoDB atlas and thus we can install mongoose for using the mongodb atlas
+mongoose make the working woth mongo DB very very easier thus we would be having  mongoose and thanks to mongoose
+
+
+thus you would be needing to create a cluster inside mongoDB in order to use the database for mongoDB thus we can say that 
+Then you have the mongoDB URI basically what needs to be done is that you would be needing to connect to mongoDB URI
+
+
+mongoose.connect(MONGO_URI).then(() => {
+    console.log("COnnected to Mongo DB");
+}); this basically returns a promise and what should be done when a promise is there , async await
+but we can use .then and async await for the promise.  but here we would be using then 
+after using then we would do a console.log simply but what we see is that
+
+Server is running on 8000
+COnnected to Mongo DB is happening so this is an error means first DB is server is loaded then DB is COnnected
+ideally this should happen reverse Thus we would be needing to start the server inside mongoDB
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+// now you have downloaded the express server and you have imported this through app so you have imported this through the application
+// now you would be needing to listen this through a port means you have a port and you would be needing to listen this inside any port
+
+// listening the port at 8000 and if I want to print something then a callback function
+// now we would be needing to change the function as we would be doing some string interpolation means that 
+// we would be having somekind of string interpolation so we would be changing to template literals
+
+
+// now what happens if you execute the above function this would be giving the output as Cannot GET /means this wont be able to get something
+// reason is because we havent sent anything here right so we havent sent anything there how would be get
+// thus you would be needing to send the browser that you need something then you need to send 
+
+// app.get(/) is the root route means this will have the route route inside the code  and a callback function
+------------------------------------------------------------------------------------------------------------------------
+
+
+everytime we would be creating a webapp , we can create a couple of http request , we have get , post , put , patch and also we have a delete request
+and thus we would be having get request , post request and also other things , so I can basically handle all of the things like This
+
+all of these requests you are seeing this request was made to this particular environment and thus our server is waiting for response to that 
+so what happens everytime you would be having a request and also a response what happens is that you would be having the request and also the responses embedded inside that 
+so what can be done is that we would be having the request and also the response 
+
+request is basically the request fetched from the browser and response is basically the response which we would be sending to the browser
+
+thus I can say that we have request adn response for that reason I can say we have the request and response
+and if we print the request that sever is getting from browser we would be generally getting all of the stuffs
+
+response is nothing but this basically tells what response we would be sending to our browsers thus we can say we get a request and response is what we send to the browser
+
+// now we are having the mongodb got created and thus we have passed a get request in which we would be getting the requests
+now what would be done is we would be modelling the data and we would be sending to the UI 
+we have a response , we would be modelling the data and we would be sending to the UI 
+thus basically I can say that in case I would be needing to connect to something and also create a database then I would be needing to create a schema Thus I can say that I would be creating a schema in which I would 
+be having all the data of exactly how the data would be stored
+
+
+------------------------------------------------------------------------------------------------------------------
+this is for the book modals means you would be having a bookschema 
+
+
+import mongoose from "mongoose";
+
+// now we have only given the <h1> hello world but we would be needing a title means that we would be 
+// needing something called as mongoose so I can say that you would be having something called as mongoose and new mongoose.createSchema will be creating 
+// mongoDb schema
+
+// so this basically tells that you would be having a title and inside that title , the type would be string
+// and required would be true means that we would be requiring this for sure
+
+// now you would be having something called as timestamp , we can say that everytime something would be stored inside the DB
+// so everytime anything would be stored inside the DB , we would be having a timestamp inside them and also automatically a timestamp would 
+// be stored inside them
+const bookSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    author: {
+        type: String,
+        required: true
+    },
+    publishYear: {
+        type: Number,
+        required: true
+    },
+} , {timestamps: true});
+
+
+export const Book = mongoose.model("Book" , bookSchema);  is there so what needs to be done is that you have created the schema inside your local machine
+but the fact is that you would be needing to expose the schema inside the mongoose means now you would be needing to ask mongoose that hey 
+I have created a schema and Now i would be needing to publish this so for that you would be exposing the mongoose model
+so we would be using the mongoose model which is the book and also the bookschema and then we would be having this.
+
+thus we would be exporting the book model and thus we would be needing to make the book model in the given mannerism added
+
+mongoDB is a nosql database means only queries not have we use data like json and stuffs
+-----------------------------------------------------------------------------------------------------------------------------
+notes for db.js
+// as db connection needs some time thus we would be doing async await for this means we would be 
+// basically handling all the await functions for the mongoose here
+
+// thus what you did you wrote a function which would be taking the app as input and giving us the output as connected to DB, once conntec
+// then we would be starting the server and having the functions inside them
+
+
+// thus what has been done is that everything which needs to be connected inside the DB , we have extracted everything 
+// ans we have kept that inside the MONGODB URL and then we have passed connectDB(app) inside the mongoDB 
+// and then we have fetched the ans
+-----------------------------------------------------------------------------------------------------------------------------
+
+for app.post
+// app.post is basically when we would be adding something inside the server , then we would be using the app.post
+// so whenever we would be using the app.post this generally means that we would be posting to server
+
+app.post("/books") what does this mean , this basically means that we would be doing localhost:8000/books 
+so basically whenever we would be having the app.post("/books) this basically means that we would be having the books into picture
+
+for this we would be having the / books basically and also this would be having the /books 
+and also this is a callback function
+
+so basically now what happens when you would be sending any of the requests from the postman thus what happens , if you print the request .body you would be getting the things
+but from what we know is that we would be sending request that request will be coming to bookls
+
+// now whenever you were sending requests what happened is that you would be getting responses meaning so whenever we would 
+// be sending we are not able to get the json file 
+// here we would be needing to get the json file and we would be doing
+// this would be showing the json object coming to my request
+app.use(express.json()); 
