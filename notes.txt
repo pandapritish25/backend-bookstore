@@ -234,3 +234,25 @@ but from what we know is that we would be sending request that request will be c
 // here we would be needing to get the json file and we would be doing
 // this would be showing the json object coming to my request
 app.use(express.json()); 
+
+
+so basically what happens whenever you would be seeing a react project what happens is that you would be seeing a strict mode 
+ 
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>,
+)
+ so basically what happens is that whenever we would be making any changes , inside the strict mode ,this would be executed twice means this would be rendered twice
+ thus we can say that inside strict mode , we would be having the things twice now what happens is that , when we would be updating the state then what happens is that 
+ this will be updating inside the stale state only means that suppse we are having things into the picture and we made a bug
+ so state 1 is when there is error and state 2 is when the react would be noticig the error and this would be pushing the code 
+
+
+ so what happens is that whenever we would be having the stale state basically what happens is that the react component would be running twice and inside that what would be happening is that 
+ if basically a bug would be there , we would be finding that bug.
+
+ react router is something that makes sure that state changes happens but reload doesnt happen means what happensis that react router is that we would be having 
+ is that this woulf dbe maintaining the state of the application means that whatever we would be having , react router would be maintaining the state of the app wihtout updating this 
+ 

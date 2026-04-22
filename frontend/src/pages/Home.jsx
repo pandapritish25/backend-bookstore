@@ -4,7 +4,6 @@ import { MdOutlineAddBox } from "react-icons/md";
 import { Link } from "react-router";
 import BookCard from "../components/BookCard";
 import Spinner from "../components/spinner";
-import BookModal from "../components/BookModal";
 
 
 function Homepage() {
